@@ -755,6 +755,10 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
+    .video-testimonials {
+        grid-template-columns: 1fr;
+    }
+
     .methodology-steps {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -805,22 +809,19 @@ footer {
 }
 
 /* ===== video.css ===== */
-.testimonial-featured {
+.video-testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     max-width: 1200px;
     margin: 0 auto 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    position: relative;
 }
 
-.testimonial-video {
-    width: 48%;
-    border-radius: 8px;
+.video-testimonial-card {
+    background-color: var(--color-medium);
+    border-radius: 14px;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .video-container {
@@ -836,40 +837,32 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border: none;
-    border-radius: 8px;
 }
 
 .video-container iframe {
     height: 100% !important;
 }
 
-.testimonial-content {
-    width: 48%;
+.video-testimonial-caption {
+    padding: 22px 24px 26px;
     color: white;
 }
 
-.testimonial-content h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--color-accent);
-    position: relative;
-}
-
-.testimonial-content h3:after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 3px;
-    background-color: var(--color-accent);
-    margin-top: 10px;
-}
-
-.testimonial-quote {
+.video-testimonial-caption h3 {
     font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.video-testimonial-caption p {
+    font-size: 0.9rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    opacity: 0.9;
     font-family: var(--font-quote);
+    margin: 0;
 }
 
 .client-info {
@@ -935,20 +928,6 @@ footer {
     margin-left: 5px;
 }
 
-@media (max-width: 768px) {
-    .testimonial-featured {
-    flex-direction: column;
-    }
-
-    .testimonial-video,
-    .testimonial-content {
-    width: 100%;
-    }
-
-    .testimonial-video {
-    margin-bottom: 30px;
-    }
-}
 
 /* ===== clients.css ===== */
 /* Estilos para la sección de clientes */

@@ -50,16 +50,21 @@ window.addEventListener('scroll', function() {
 });
 
 // Script para reemplazar la imagen con el iframe de YouTube al hacer clic
-document.querySelector('.play-button').addEventListener('click', function() {
-const videoContainer = document.querySelector('.video-container');
-const iframe = document.createElement('iframe');
+document.querySelectorAll('.video-container').forEach(function(videoContainer) {
+    const playButton = videoContainer.querySelector('.play-button');
+    if (!playButton) return;
 
-// Formato correcto para embeber videos de YouTube
-iframe.src = "https://www.youtube.com/embed/Qb8AWj6cApU?autoplay=1";
-iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-iframe.allowFullscreen = true;
+    playButton.addEventListener('click', function() {
+        const videoId = videoContainer.dataset.youtubeId;
+        const iframe = document.createElement('iframe');
 
-// Limpiar el contenedor y agregar el iframe
-videoContainer.innerHTML = '';
-videoContainer.appendChild(iframe);
+        // Formato correcto para embeber videos de YouTube
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+
+        // Limpiar el contenedor y agregar el iframe
+        videoContainer.innerHTML = '';
+        videoContainer.appendChild(iframe);
+    });
 });

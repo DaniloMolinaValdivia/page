@@ -155,12 +155,12 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    padding: 130px 0 100px;
+    padding: 130px 0 80px;
     margin-top: 0;
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .hero .container {

@@ -743,10 +743,6 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
-    .video-testimonials {
-        grid-template-columns: 1fr;
-    }
-
     .methodology-steps {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -832,6 +828,12 @@ footer {
 
 .video-container iframe {
     height: 100% !important;
+}
+
+@media (max-width: 992px) {
+    .video-testimonials {
+        grid-template-columns: 1fr;
+    }
 }
 
 .video-testimonial-caption {
